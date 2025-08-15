@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAE990AE2E4F5CAB00BC53A6 /* ASKCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = FAE990AD2E4F5CAB00BC53A6 /* ASKCoordinator */; };
+		FAE9917D2E4F5E4600BC53A6 /* knitconfig.json in Resources */ = {isa = PBXBuildFile; fileRef = FAE9917C2E4F5E4600BC53A6 /* knitconfig.json */; };
+		FAE9918C2E4F5F0400BC53A6 /* Knit in Frameworks */ = {isa = PBXBuildFile; productRef = FAE9918B2E4F5F0400BC53A6 /* Knit */; };
+		FAE9918E2E4F5F0700BC53A6 /* KnitMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FAE9918D2E4F5F0700BC53A6 /* KnitMacros */; };
+		FAE991982E4F604E00BC53A6 /* ASKCore in Frameworks */ = {isa = PBXBuildFile; productRef = FAE991972E4F604E00BC53A6 /* ASKCore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAE990902E4F5C9300BC53A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAE9907A2E4F5C9100BC53A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAE990812E4F5C9100BC53A6;
+			remoteInfo = DrinkTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FAE990822E4F5C9100BC53A6 /* DrinkTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE9908F2E4F5C9300BC53A6 /* DrinkTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrinkTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE9917C2E4F5E4600BC53A6 /* knitconfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = knitconfig.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FAE990842E4F5C9100BC53A6 /* DrinkTracker */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DrinkTracker;
+			sourceTree = "<group>";
+		};
+		FAE990922E4F5C9300BC53A6 /* DrinkTrackerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DrinkTrackerTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAE9907F2E4F5C9100BC53A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE9918C2E4F5F0400BC53A6 /* Knit in Frameworks */,
+				FAE9918E2E4F5F0700BC53A6 /* KnitMacros in Frameworks */,
+				FAE990AE2E4F5CAB00BC53A6 /* ASKCoordinator in Frameworks */,
+				FAE991982E4F604E00BC53A6 /* ASKCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE9908C2E4F5C9300BC53A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAE990792E4F5C9100BC53A6 = {
+			isa = PBXGroup;
+			children = (
+				FAE9917C2E4F5E4600BC53A6 /* knitconfig.json */,
+				FAE990842E4F5C9100BC53A6 /* DrinkTracker */,
+				FAE990922E4F5C9300BC53A6 /* DrinkTrackerTests */,
+				FAE9918A2E4F5F0400BC53A6 /* Frameworks */,
+				FAE990832E4F5C9100BC53A6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAE990832E4F5C9100BC53A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAE990822E4F5C9100BC53A6 /* DrinkTracker.app */,
+				FAE9908F2E4F5C9300BC53A6 /* DrinkTrackerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAE9918A2E4F5F0400BC53A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAE990812E4F5C9100BC53A6 /* DrinkTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAE990A32E4F5C9300BC53A6 /* Build configuration list for PBXNativeTarget "DrinkTracker" */;
+			buildPhases = (
+				FAE9907E2E4F5C9100BC53A6 /* Sources */,
+				FAE9907F2E4F5C9100BC53A6 /* Frameworks */,
+				FAE990802E4F5C9100BC53A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAE991892E4F5EFB00BC53A6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FAE990842E4F5C9100BC53A6 /* DrinkTracker */,
+			);
+			name = DrinkTracker;
+			packageProductDependencies = (
+				FAE990AD2E4F5CAB00BC53A6 /* ASKCoordinator */,
+				FAE9918B2E4F5F0400BC53A6 /* Knit */,
+				FAE9918D2E4F5F0700BC53A6 /* KnitMacros */,
+				FAE991972E4F604E00BC53A6 /* ASKCore */,
+			);
+			productName = DrinkTracker;
+			productReference = FAE990822E4F5C9100BC53A6 /* DrinkTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAE9908E2E4F5C9300BC53A6 /* DrinkTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAE990A62E4F5C9300BC53A6 /* Build configuration list for PBXNativeTarget "DrinkTrackerTests" */;
+			buildPhases = (
+				FAE9908B2E4F5C9300BC53A6 /* Sources */,
+				FAE9908C2E4F5C9300BC53A6 /* Frameworks */,
+				FAE9908D2E4F5C9300BC53A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAE990912E4F5C9300BC53A6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FAE990922E4F5C9300BC53A6 /* DrinkTrackerTests */,
+			);
+			name = DrinkTrackerTests;
+			packageProductDependencies = (
+			);
+			productName = DrinkTrackerTests;
+			productReference = FAE9908F2E4F5C9300BC53A6 /* DrinkTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAE9907A2E4F5C9100BC53A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					FAE990812E4F5C9100BC53A6 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					FAE9908E2E4F5C9300BC53A6 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = FAE990812E4F5C9100BC53A6;
+					};
+				};
+			};
+			buildConfigurationList = FAE9907D2E4F5C9100BC53A6 /* Build configuration list for PBXProject "DrinkTracker" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAE990792E4F5C9100BC53A6;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FAE990AC2E4F5CAB00BC53A6 /* XCLocalSwiftPackageReference "../../wip_ios/ASKCoordinator" */,
+				FAE991832E4F5EF200BC53A6 /* XCRemoteSwiftPackageReference "knit" */,
+				FAE991962E4F604E00BC53A6 /* XCRemoteSwiftPackageReference "ASKCore" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = FAE990832E4F5C9100BC53A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAE990812E4F5C9100BC53A6 /* DrinkTracker */,
+				FAE9908E2E4F5C9300BC53A6 /* DrinkTrackerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAE990802E4F5C9100BC53A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE9917D2E4F5E4600BC53A6 /* knitconfig.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE9908D2E4F5C9300BC53A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAE9907E2E4F5C9100BC53A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE9908B2E4F5C9300BC53A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAE990912E4F5C9300BC53A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAE990812E4F5C9100BC53A6 /* DrinkTracker */;
+			targetProxy = FAE990902E4F5C9300BC53A6 /* PBXContainerItemProxy */;
+		};
+		FAE991892E4F5EFB00BC53A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FAE991882E4F5EFB00BC53A6 /* KnitBuildPlugin */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FAE990A12E4F5C9300BC53A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FAE990A22E4F5C9300BC53A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAE990A42E4F5C9300BC53A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.DrinkTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAE990A52E4F5C9300BC53A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.DrinkTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FAE990A72E4F5C9300BC53A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.DrinkTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrinkTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrinkTracker";
+			};
+			name = Debug;
+		};
+		FAE990A82E4F5C9300BC53A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.DrinkTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrinkTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrinkTracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAE9907D2E4F5C9100BC53A6 /* Build configuration list for PBXProject "DrinkTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAE990A12E4F5C9300BC53A6 /* Debug */,
+				FAE990A22E4F5C9300BC53A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAE990A32E4F5C9300BC53A6 /* Build configuration list for PBXNativeTarget "DrinkTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAE990A42E4F5C9300BC53A6 /* Debug */,
+				FAE990A52E4F5C9300BC53A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAE990A62E4F5C9300BC53A6 /* Build configuration list for PBXNativeTarget "DrinkTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAE990A72E4F5C9300BC53A6 /* Debug */,
+				FAE990A82E4F5C9300BC53A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		FAE990AC2E4F5CAB00BC53A6 /* XCLocalSwiftPackageReference "../../wip_ios/ASKCoordinator" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../wip_ios/ASKCoordinator;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAE991832E4F5EF200BC53A6 /* XCRemoteSwiftPackageReference "knit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cashapp/knit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.3;
+			};
+		};
+		FAE991962E4F604E00BC53A6 /* XCRemoteSwiftPackageReference "ASKCore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/skorulis/ASKCore.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAE990AD2E4F5CAB00BC53A6 /* ASKCoordinator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ASKCoordinator;
+		};
+		FAE991882E4F5EFB00BC53A6 /* KnitBuildPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAE991832E4F5EF200BC53A6 /* XCRemoteSwiftPackageReference "knit" */;
+			productName = "plugin:KnitBuildPlugin";
+		};
+		FAE9918B2E4F5F0400BC53A6 /* Knit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAE991832E4F5EF200BC53A6 /* XCRemoteSwiftPackageReference "knit" */;
+			productName = Knit;
+		};
+		FAE9918D2E4F5F0700BC53A6 /* KnitMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAE991832E4F5EF200BC53A6 /* XCRemoteSwiftPackageReference "knit" */;
+			productName = KnitMacros;
+		};
+		FAE991972E4F604E00BC53A6 /* ASKCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAE991962E4F604E00BC53A6 /* XCRemoteSwiftPackageReference "ASKCore" */;
+			productName = ASKCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FAE9907A2E4F5C9100BC53A6 /* Project object */;
+}

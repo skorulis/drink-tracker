@@ -1,0 +1,5 @@
+{
+    "assemblyInputPaths": [
+        "DrinkTracker/Service/DI/DrinkTrackerAssembly.swift"
+    ]
+}
