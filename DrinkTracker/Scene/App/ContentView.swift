@@ -1,16 +1,18 @@
 //  Created by Alexander Skorulis on 15/8/2025.
 
+import ASKCore
+import ASKCoordinator
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.drinkTrackerResolver) private var resolver
+    
+    @State var coordinator = Coordinator(root: RootPath.home)
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        CoordinatorView(coordinator: coordinator)
+            .with(renderer: resolver!.rootPathRenderer())
     }
 }
 

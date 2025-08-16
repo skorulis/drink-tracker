@@ -1,5 +1,5 @@
 {
-  "originHash" : "105c70682408572bc3a884e2cd89090b52cc9568a86605295fb3dd2fedfb93b6",
+  "originHash" : "5694aced2558a32cfd18260bb9d61545a0341aa9fa39b0f38cbe0e2c78269d77",
   "pins" : [
     {
       "identity" : "askcore",
@@ -7,7 +7,7 @@
       "location" : "https://github.com/skorulis/ASKCore.git",
       "state" : {
         "branch" : "main",
-        "revision" : "861e090263cd19eb7e4da49c98eaf0ec56e494eb"
+        "revision" : "f6c161e162bc5d44d2a72a391b764023ebc08e94"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/cashapp/knit.git",
       "state" : {
-        "branch" : "skorulis/spm-plugin",
-        "revision" : "f78d1e9f6cd0706d883a256b8115344f2d7051c4"
+        "branch" : "skorulis/resolver-type",
+        "revision" : "3d97336788a0abce79c18cbfd3a444ed4d37a4b5"
       }
     },
     {
@@ -33,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-syntax.git",
       "state" : {
-        "revision" : "0687f71944021d616d34d922343dcef086855920",
-        "version" : "600.0.1"
+        "revision" : "f99ae8aa18f0cf0d53481901f88a0991dc3bd4a2",
+        "version" : "601.0.1"
       }
     }
   ],

@@ -7,8 +7,8 @@ import Knit
 @main
 struct DrinkTrackerApp: App {
     
-    private let assembler: ScopedModuleAssembler<Resolver> = {
-        let assembler = ScopedModuleAssembler<Resolver>(
+    private let assembler: ScopedModuleAssembler<DrinkTrackerResolver> = {
+        let assembler = ScopedModuleAssembler<DrinkTrackerResolver>(
             [
                 DrinkTrackerAssembly(),
             ]
