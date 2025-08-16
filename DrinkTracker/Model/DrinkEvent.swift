@@ -3,7 +3,7 @@
 import Foundation
 import CoreLocation
 
-struct DrinkEvent {
+struct DrinkEvent: Identifiable {
     let id: UUID
     let time: Date
     let location: CLLocationCoordinate2D?

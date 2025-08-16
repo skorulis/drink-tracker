@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FAE990AE2E4F5CAB00BC53A6 /* ASKCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = FAE990AD2E4F5CAB00BC53A6 /* ASKCoordinator */; };
 		FAE9917D2E4F5E4600BC53A6 /* knitconfig.json in Resources */ = {isa = PBXBuildFile; fileRef = FAE9917C2E4F5E4600BC53A6 /* knitconfig.json */; };
 		FAE991982E4F604E00BC53A6 /* ASKCore in Frameworks */ = {isa = PBXBuildFile; productRef = FAE991972E4F604E00BC53A6 /* ASKCore */; };
 		FAE992BE2E500FAE00BC53A6 /* Knit in Frameworks */ = {isa = PBXBuildFile; productRef = FAE992BD2E500FAE00BC53A6 /* Knit */; };
 		FAE992C02E500FAE00BC53A6 /* KnitMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FAE992BF2E500FAE00BC53A6 /* KnitMacros */; };
 		FAE993DD2E50286B00BC53A6 /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = FAE993DC2E50286B00BC53A6 /* Numerics */; };
+		FAE994B02E50912200BC53A6 /* ASKCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = FAE994AF2E50912200BC53A6 /* ASKCoordinator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAE990AE2E4F5CAB00BC53A6 /* ASKCoordinator in Frameworks */,
 				FAE992C02E500FAE00BC53A6 /* KnitMacros in Frameworks */,
+				FAE994B02E50912200BC53A6 /* ASKCoordinator in Frameworks */,
 				FAE991982E4F604E00BC53A6 /* ASKCore in Frameworks */,
 				FAE992BE2E500FAE00BC53A6 /* Knit in Frameworks */,
 			);
@@ -119,6 +119,7 @@
 				FAE991972E4F604E00BC53A6 /* ASKCore */,
 				FAE992BD2E500FAE00BC53A6 /* Knit */,
 				FAE992BF2E500FAE00BC53A6 /* KnitMacros */,
+				FAE994AF2E50912200BC53A6 /* ASKCoordinator */,
 			);
 			productName = DrinkTracker;
 			productReference = FAE990822E4F5C9100BC53A6 /* DrinkTracker.app */;
@@ -177,10 +178,10 @@
 			mainGroup = FAE990792E4F5C9100BC53A6;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				FAE990AC2E4F5CAB00BC53A6 /* XCLocalSwiftPackageReference "../../wip_ios/ASKCoordinator" */,
 				FAE991962E4F604E00BC53A6 /* XCRemoteSwiftPackageReference "ASKCore" */,
 				FAE992BC2E500FAE00BC53A6 /* XCRemoteSwiftPackageReference "knit" */,
 				FAE993DB2E50286B00BC53A6 /* XCRemoteSwiftPackageReference "swift-numerics" */,
+				FAE994AE2E50912200BC53A6 /* XCRemoteSwiftPackageReference "ASKCoordinator" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FAE990832E4F5C9100BC53A6 /* Products */;
@@ -500,13 +501,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		FAE990AC2E4F5CAB00BC53A6 /* XCLocalSwiftPackageReference "../../wip_ios/ASKCoordinator" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../wip_ios/ASKCoordinator;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
 		FAE991962E4F604E00BC53A6 /* XCRemoteSwiftPackageReference "ASKCore" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -530,6 +524,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.3;
+			};
+		};
+		FAE994AE2E50912200BC53A6 /* XCRemoteSwiftPackageReference "ASKCoordinator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:skorulis/ASKCoordinator.git";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -563,6 +565,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FAE993DB2E50286B00BC53A6 /* XCRemoteSwiftPackageReference "swift-numerics" */;
 			productName = Numerics;
+		};
+		FAE994AF2E50912200BC53A6 /* ASKCoordinator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAE994AE2E50912200BC53A6 /* XCRemoteSwiftPackageReference "ASKCoordinator" */;
+			productName = ASKCoordinator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

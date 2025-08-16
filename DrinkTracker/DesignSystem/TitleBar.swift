@@ -30,10 +30,13 @@ public struct TitleBar<TrailingIcon: View>: View {
                 trailing()
             }
             .frame(minHeight: 44)
-            .padding(.horizontal, 16)
+            .padding(.horizontal, hasLeadingButton ? 0 : 16)
+            .padding(.trailing, hasLeadingButton ? 16 : 0)
             Divider()
         }
     }
+    
+    private var hasLeadingButton: Bool { backAction != nil }
     
     @ViewBuilder
     private var maybeBackButton: some View {

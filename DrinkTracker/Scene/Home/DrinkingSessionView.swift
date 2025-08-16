@@ -22,6 +22,7 @@ extension DrinkingSessionView: View {
             }
             Spacer()
         }
+        .foregroundStyle(Color.black)
     }
 
     private var dateString: String { session.startTime.formatted(date: .long, time: .omitted) }

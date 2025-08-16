@@ -36,7 +36,9 @@ extension HomeView: View {
     private var sessions: some View {
         VStack {
             ForEach(viewModel.sessions) { session in
-                DrinkingSessionView(session: session)
+                Button(action: { viewModel.showSession(session: session)}) {
+                    DrinkingSessionView(session: session)
+                }
             }
         }
         .padding(.horizontal, 16)
