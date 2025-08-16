@@ -25,7 +25,7 @@ extension HomeViewModel {
         guard let currentSession = sessions.first else {
             return nil
         }
-        return AlcoholCalculator.bac(session: currentSession)
+        return AlcoholCalculator.bac(session: currentSession, weight: 85)
     }
     
     func showSession(session: DrinkingSession) {

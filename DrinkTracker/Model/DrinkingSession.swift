@@ -56,6 +56,22 @@ extension DrinkingSession {
                     abv: 6.1
                 )
             ),
+            DrinkEvent(
+                time: dateFormatter.date(from: "2025-08-16:20:54")!,
+                drink: Drink(
+                    name: "Espolōn Lime and Soda",
+                    size: 335,
+                    abv: 4.5
+                )
+            ),
+            DrinkEvent(
+                time: dateFormatter.date(from: "2025-08-16:21:33")!,
+                drink: Drink(
+                    name: "Pirate Life Hazy XPA",
+                    size: 355,
+                    abv: 5.0
+                )
+            ),
         ])
     }
 }

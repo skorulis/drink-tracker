@@ -18,6 +18,7 @@ extension DrinkingEventCell: View {
             VStack(alignment: .leading) {
                 if let name = drink.name {
                     Text(name)
+                        .bold()
                 }
                 Text(sizeAndABV)
                 Text("\(AlcoholCalculator.stdDrinks(drink: drink)) std drinks")

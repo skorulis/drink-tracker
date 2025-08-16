@@ -19,11 +19,13 @@ struct DrinkTrackerAssembly: AutoInitModuleAssembly {
     
     private func registerRenderers(container: Knit.Container<DrinkTrackerResolver>) {
         container.register(RootPathRenderer.self) { RootPathRenderer(resolver: $0) }
+        container.register(SettingsPathRenderer.self) { SettingsPathRenderer(resolver: $0) }
     }
     
     private func registerViewModels(container: Knit.Container<DrinkTrackerResolver>) {
         container.register(HomeViewModel.self) { HomeViewModel.make(resolver: $0) }
         container.register(EditDrinkViewModel.self) { EditDrinkViewModel.make(resolver: $0) }
+        container.register(SettingsHomeViewModel.self) { SettingsHomeViewModel.make(resolver: $0) }
         container.register(DrinkingSessionListViewModel.self) { (resolver: DrinkTrackerResolver, session: DrinkingSession) in
             DrinkingSessionListViewModel.make(resolver: resolver, session: session)
         }

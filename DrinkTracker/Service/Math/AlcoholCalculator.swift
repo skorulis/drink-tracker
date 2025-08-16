@@ -26,10 +26,20 @@ struct AlcoholCalculator {
         return drinks.map { grams(drink: $0) }.reduce(0, +)
     }
     
-    static func bac(session: DrinkingSession, weight: Double = 85) -> Double {
+    static func bac(session: DrinkingSession, weight: Double) -> Double {
         let seconds = session.endTime.timeIntervalSince1970 - session.startTime.timeIntervalSince1970
         let alcoholGrams = session.events.map { grams(drink: $0.drink) }.reduce(0, +)
         let hours = seconds / 3600
+        return AlcoholCalculator.bac(alcoholGrams: alcoholGrams, hours: hours)
+    }
+    
+    static func bac(events: [DrinkEvent], weight: Double) -> Double {
+        guard events.count > 0 else {
+            return 0
+        }
+        let seconds = events.last!.time.timeIntervalSince1970 - events.first!.time.timeIntervalSince1970
+        let hours = seconds / 3600
+        let alcoholGrams = events.map { grams(drink: $0.drink) }.reduce(0, +)
         return AlcoholCalculator.bac(alcoholGrams: alcoholGrams, hours: hours)
     }
     

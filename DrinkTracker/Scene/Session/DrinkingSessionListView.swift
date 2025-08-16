@@ -27,7 +27,8 @@ extension DrinkingSessionListView: View {
     }
     
     private var content: some View {
-        VStack {
+        VStack(spacing: 8) {
+            DrinkingSessionBACChart(session: viewModel.session)
             ForEach(viewModel.events) { event in
                 DrinkingEventCell(event: event)
             }

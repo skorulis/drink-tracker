@@ -8,11 +8,28 @@ struct ContentView: View {
     
     @Environment(\.drinkTrackerResolver) private var resolver
     
-    @State var coordinator = Coordinator(root: RootPath.home)
+    @State var homeCoordinator = Coordinator(root: RootPath.home)
+    @State var setttingsCoordinator = Coordinator(root: SettingsPath.home)
     
     var body: some View {
-        CoordinatorView(coordinator: coordinator)
+        TabView {
+            Tab("Home", systemImage: "wineglass") {
+                homeView
+            }
+            Tab("Settings", systemImage: "gear.circle") {
+                settingsView
+            }
+        }
+    }
+    
+    private var homeView: some View {
+        CoordinatorView(coordinator: homeCoordinator)
             .with(renderer: resolver!.rootPathRenderer())
+    }
+    
+    private var settingsView: some View {
+        CoordinatorView(coordinator: setttingsCoordinator)
+            .with(renderer: resolver!.settingsPathRenderer())
     }
 }
 
