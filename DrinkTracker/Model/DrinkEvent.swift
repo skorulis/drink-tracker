@@ -33,18 +33,18 @@ struct Drink {
     let size: Int
     
     // % Strength
-    let strength: Double
+    let abv: Double
     
     init(
         photoID: String? = nil,
         name: String? = nil,
         size: Int,
-        strength: Double
+        abv: Double
     ) {
         self.photoID = photoID
         self.name = name
         self.size = size
-        self.strength = strength
+        self.abv = abv
     }
     
 }

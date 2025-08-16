@@ -19,7 +19,7 @@ struct DrinkTrackerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.resolver, assembler.resolver)
+                .environment(\.drinkTrackerResolver, assembler.resolver)
         }
     }
 }

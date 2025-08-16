@@ -15,13 +15,31 @@ struct HomeView {
 extension HomeView: View {
     
     var body: some View {
-        EmptyView()
+        PageScaffold {
+            TitleBar(title: "Home")
+        } content: {
+            VStack(spacing: 8) {
+                maybeBAC
+                sessions
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var maybeBAC: some View {
+        if let bac = viewModel.bac {
+            Text("BAC: \(bac)")
+                .font(.title)
+        }
     }
     
     private var sessions: some View {
         VStack {
-            
+            ForEach(viewModel.sessions) { session in
+                DrinkingSessionView(session: session)
+            }
         }
+        .padding(.horizontal, 16)
     }
 }
 

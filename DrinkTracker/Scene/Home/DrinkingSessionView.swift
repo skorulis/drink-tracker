@@ -18,7 +18,7 @@ extension DrinkingSessionView: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(dateString)
-                Text("\(session.events.count) drinks")
+                Text("\(session.events.count) bevs (\(totalStdDrinks) std)")
             }
             Spacer()
         }
@@ -26,19 +26,22 @@ extension DrinkingSessionView: View {
 
     private var dateString: String { session.startTime.formatted(date: .long, time: .omitted) }
 
+    private var totalStdDrinks: Double {
+        session.events.map { AlcoholCalculator.stdDrinks(drink: $0.drink) }.reduce(0, +)
+    }
 }
 
 // MARK: - Previews
 
 #Preview {
-    VStack {
+    VStack(spacing: 10) {
         DrinkingSessionView(
             session: .init(events: [
                 DrinkEvent(
-                    drink: Drink(size: 375, strength: 4.5)
+                    drink: Drink(size: 375, abv: 4.5)
                 ),
                 DrinkEvent(
-                    drink: Drink(size: 375, strength: 4.5)
+                    drink: Drink(size: 375, abv: 4.5)
                 )
             ])
         )
@@ -46,7 +49,7 @@ extension DrinkingSessionView: View {
         DrinkingSessionView(
             session: .init(events: [
                 DrinkEvent(
-                    drink: Drink(size: 375, strength: 4.5)
+                    drink: Drink(size: 375, abv: 4.5)
                 ),
             ])
         )
