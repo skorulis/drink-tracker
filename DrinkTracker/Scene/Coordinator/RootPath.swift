@@ -7,15 +7,18 @@ import SwiftUI
 
 enum RootPath: CoordinatorPath {
     case home
-    case editDrink
+    case addDrink
+    case editDrink(DrinkEvent)
     case drinkSession(DrinkingSession)
     
     public var id: String {
         switch self {
         case .home:
             return "home"
-        case .editDrink:
-            return "editDrink"
+        case .addDrink:
+            return "addDrink"
+        case let .editDrink(drink):
+            return "editDrink-\(drink.id)"
         case let .drinkSession(session):
             return "drinking-session-\(session.id)"
         }
@@ -31,8 +34,10 @@ struct RootPathRenderer: CoordinatorPathRenderer {
         switch path {
         case .home:
             HomeView(viewModel: coordinator.apply(resolver.homeViewModel()))
-        case .editDrink:
-            EditDrinkView(viewModel: coordinator.apply(resolver.editDrinkViewModel()))
+        case .addDrink:
+            EditDrinkView(viewModel: coordinator.apply(resolver.editDrinkViewModel(drink: nil)))
+        case let .editDrink(drink):
+            EditDrinkView(viewModel: coordinator.apply(resolver.editDrinkViewModel(drink: drink)))
         case let .drinkSession(session):
             DrinkingSessionListView(viewModel: coordinator.apply(resolver.drinkingSessionListViewModel(session: session)))
         }

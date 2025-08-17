@@ -6,7 +6,7 @@ struct DrinkingSession: Identifiable {
     
     let id: UUID
     
-    let events: [DrinkEvent]
+    var events: [DrinkEvent]
     
     init(id: UUID = UUID(), events: [DrinkEvent]) {
         self.id = id
@@ -24,6 +24,15 @@ struct DrinkingSession: Identifiable {
     
     var endTime: Date {
         min(lastDrinkTime.addingTimeInterval(3600), Date())
+    }
+    
+    mutating func update(drink: DrinkEvent) {
+        let index = events.firstIndex(where: { $0.id == drink.id})
+        if let index {
+            events[index] = drink
+        } else {
+            events.append(drink)
+        }
     }
 }
 
@@ -70,6 +79,14 @@ extension DrinkingSession {
                     name: "Pirate Life Hazy XPA",
                     size: 355,
                     abv: 5.0
+                )
+            ),
+            DrinkEvent(
+                time: dateFormatter.date(from: "2025-08-16:22:15")!,
+                drink: Drink(
+                    name: "Limoncello",
+                    size: 30,
+                    abv: 15.0
                 )
             ),
         ])

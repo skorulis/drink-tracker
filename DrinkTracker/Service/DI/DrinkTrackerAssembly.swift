@@ -24,7 +24,9 @@ struct DrinkTrackerAssembly: AutoInitModuleAssembly {
     
     private func registerViewModels(container: Knit.Container<DrinkTrackerResolver>) {
         container.register(HomeViewModel.self) { HomeViewModel.make(resolver: $0) }
-        container.register(EditDrinkViewModel.self) { EditDrinkViewModel.make(resolver: $0) }
+        container.register(EditDrinkViewModel.self) { (resolver: DrinkTrackerResolver, drink: DrinkEvent?) in
+            EditDrinkViewModel.make(resolver: resolver, drink: drink)
+        }
         container.register(SettingsHomeViewModel.self) { SettingsHomeViewModel.make(resolver: $0) }
         container.register(DrinkingSessionListViewModel.self) { (resolver: DrinkTrackerResolver, session: DrinkingSession) in
             DrinkingSessionListViewModel.make(resolver: resolver, session: session)
@@ -33,6 +35,7 @@ struct DrinkTrackerAssembly: AutoInitModuleAssembly {
     
     private func registerStores(container: Knit.Container<DrinkTrackerResolver>) {
         container.register(MainStore.self) { MainStore.make(resolver: $0) }
+            .inObjectScope(.container)
     }
 }
 

@@ -23,7 +23,7 @@ struct SettingsPathRenderer: CoordinatorPathRenderer {
     func render(path: SettingsPath, in coordinator: Coordinator) -> some View {
         switch path {
         case .home:
-            EmptyView()
+            SettingsHomeView(viewModel: coordinator.apply(resolver.settingsHomeViewModel()))
         }
     }
 }

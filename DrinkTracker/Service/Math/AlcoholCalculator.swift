@@ -3,7 +3,16 @@
 import Foundation
 
 struct AlcoholCalculator {
- 
+    enum SessionTime {
+        case end
+        case now
+    }
+}
+
+// MARK: - Formulas
+
+extension AlcoholCalculator {
+    
     static func grams(ml: Double, abv: Double) -> Double {
         let gravity: Double = 0.789
         return ml * (abv / 100) * gravity
@@ -13,6 +22,23 @@ struct AlcoholCalculator {
     static func stdDrinks(ml: Double, abv: Double) -> Double {
         return grams(ml: ml, abv: abv) / 10
     }
+    
+    static func bac(
+        alcoholGrams: Double,
+        weight: Double = 85,
+        hours: Double = 0
+    ) -> Double {
+        let weightGrams = weight * 1000
+        let genderFactor: Double = 0.68
+        let startingBAC = 100 * alcoholGrams / (weightGrams * genderFactor)
+        let eliminationRate = 0.015
+        return max(startingBAC - hours * eliminationRate, 0)
+    }
+}
+
+// MARK: - Drink functions
+
+extension AlcoholCalculator {
     
     static func stdDrinks(drink: Drink) -> Double {
         return stdDrinks(ml: Double(drink.size), abv: drink.abv)
@@ -26,8 +52,15 @@ struct AlcoholCalculator {
         return drinks.map { grams(drink: $0) }.reduce(0, +)
     }
     
-    static func bac(session: DrinkingSession, weight: Double) -> Double {
-        let seconds = session.endTime.timeIntervalSince1970 - session.startTime.timeIntervalSince1970
+    static func bac(session: DrinkingSession, weight: Double, time: SessionTime) -> Double {
+        let endTime: Date
+        switch time {
+        case .end:
+            endTime = session.endTime
+        case .now:
+            endTime = Date()
+        }
+        let seconds = endTime.timeIntervalSince1970 - session.startTime.timeIntervalSince1970
         let alcoholGrams = session.events.map { grams(drink: $0.drink) }.reduce(0, +)
         let hours = seconds / 3600
         return AlcoholCalculator.bac(alcoholGrams: alcoholGrams, hours: hours)
@@ -41,17 +74,5 @@ struct AlcoholCalculator {
         let hours = seconds / 3600
         let alcoholGrams = events.map { grams(drink: $0.drink) }.reduce(0, +)
         return AlcoholCalculator.bac(alcoholGrams: alcoholGrams, hours: hours)
-    }
-    
-    static func bac(
-        alcoholGrams: Double,
-        weight: Double = 85,
-        hours: Double = 0
-    ) -> Double {
-        let weightGrams = weight * 1000
-        let genderFactor: Double = 0.68
-        let startingBAC = 100 * alcoholGrams / (weightGrams * genderFactor)
-        let eliminationRate = 0.015
-        return startingBAC - hours * eliminationRate
     }
 }

@@ -24,7 +24,9 @@ extension DrinkingEventCell: View {
                 Text("\(AlcoholCalculator.stdDrinks(drink: drink)) std drinks")
             }
             Spacer()
+            Image(systemName: "chevron.right")
         }
+        .foregroundStyle(Color.black)
     }
     
     var sizeAndABV: String {

@@ -5,14 +5,14 @@ import SwiftUI
 
 // MARK: - Memory footprint
 
-struct DrinkingSessionView {
+struct DrinkingSessionCell {
     let session: DrinkingSession
     
 }
 
 // MARK: - Rendering
 
-extension DrinkingSessionView: View {
+extension DrinkingSessionCell: View {
     
     var body: some View {
         HStack {
@@ -21,6 +21,7 @@ extension DrinkingSessionView: View {
                 Text("\(session.events.count) bevs (\(totalStdDrinks) std)")
             }
             Spacer()
+            Image(systemName: "chevron.right")
         }
         .foregroundStyle(Color.black)
     }
@@ -36,7 +37,7 @@ extension DrinkingSessionView: View {
 
 #Preview {
     VStack(spacing: 10) {
-        DrinkingSessionView(
+        DrinkingSessionCell(
             session: .init(events: [
                 DrinkEvent(
                     drink: Drink(size: 375, abv: 4.5)
@@ -47,7 +48,7 @@ extension DrinkingSessionView: View {
             ])
         )
         
-        DrinkingSessionView(
+        DrinkingSessionCell(
             session: .init(events: [
                 DrinkEvent(
                     drink: Drink(size: 375, abv: 4.5)

@@ -16,7 +16,7 @@ struct DrinkingSessionListView {
 extension DrinkingSessionListView: View {
     
     var body: some View {
-        PageScaffold {
+        PageScaffold(list: true) {
             TitleBar(
                 title: "Session",
                 backAction: { viewModel.coordinator?.pop() }
@@ -26,14 +26,15 @@ extension DrinkingSessionListView: View {
         }
     }
     
+    @ViewBuilder
     private var content: some View {
-        VStack(spacing: 8) {
-            DrinkingSessionBACChart(session: viewModel.session)
-            ForEach(viewModel.events) { event in
+        DrinkingSessionBACChart(session: viewModel.session)
+        ForEach(viewModel.events) { event in
+            Button(action: { viewModel.show(event: event) }) {
                 DrinkingEventCell(event: event)
             }
         }
-        .padding(.horizontal, 16)
+        .onDelete(perform: viewModel.delete(offsets:))
     }
 }
 

@@ -7,10 +7,16 @@ import SwiftUI
 
 struct PageScaffold<Header: View, Content: View> {
     
+    private let list: Bool
     private let header: () -> Header
     private let content: () -> Content
     
-    public init(header: @escaping () -> Header, content: @escaping () -> Content) {
+    public init(
+        list: Bool = false,
+        header: @escaping () -> Header,
+        content: @escaping () -> Content
+    ) {
+        self.list = list
         self.header = header
         self.content = content
     }
@@ -23,10 +29,19 @@ extension PageScaffold: View {
     public var body: some View {
         VStack(spacing: 0) {
             header()
-            ScrollView {
-                Spacer()
-                    .frame(height: 24)
-                content()
+            if list {
+                List {
+                    content()
+                }
+                .listStyle(PlainListStyle())
+                .listRowSpacing(0)
+            } else {
+                ScrollView {
+                    Spacer()
+                        .frame(height: 24)
+                    content()
+                }
+                .scrollDismissesKeyboard(.immediately)
             }
         }
         .navigationBarHidden(true)

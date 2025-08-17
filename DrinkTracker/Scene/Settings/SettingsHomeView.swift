@@ -18,9 +18,41 @@ extension SettingsHomeView: View {
         PageScaffold {
             TitleBar(title: "Settings")
         } content: {
-            Text("Settings here")
+            content
         }
-
+    }
+    
+    private var content: some View {
+        VStack {
+            HStack {
+                Text("Weight")
+                TextField("Weight", text: $viewModel.weightString)
+                    .textFieldStyle(.roundedBorder)
+            }
+            
+            gender
+        }
+        .padding(.horizontal, 16)
+    }
+    
+    private var gender: some View {
+        HStack {
+            Text("Gender")
+            genderPicker
+        }
+    }
+    
+    private var genderPicker: some View {
+        Picker("", selection: $viewModel.gender,
+               content: {
+            ForEach(Gender.allCases) { data in
+                Text(data.rawValue).tag(data)
+            }
+        })
+        .pickerStyle(.segmented)
+        .font(.largeTitle)
+        .accentColor(.white)
+        
     }
 }
 

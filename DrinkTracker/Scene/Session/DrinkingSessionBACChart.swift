@@ -23,7 +23,6 @@ extension DrinkingSessionBACChart: View {
                     y: .value("BAC", point.bac)
                 )
             }
-            //.interpolationMethod(.cardinal)
         }
         .frame(height: 100)
     }
@@ -34,7 +33,7 @@ extension DrinkingSessionBACChart: View {
             let usedEvents = Array(session.events.prefix(i))
             if i > 0 {
                 var beforeEvents = Array(session.events.prefix(i - 1))
-                let timePoint = session.events[i].time.addingTimeInterval(-400)
+                let timePoint = session.events[i].time
                 beforeEvents.append(
                     DrinkEvent(
                         time: timePoint,
@@ -48,7 +47,7 @@ extension DrinkingSessionBACChart: View {
             let bac = AlcoholCalculator.bac(events: usedEvents, weight: weight)
             result.append(.init(bac: bac, date: session.events[i].time))
         }
-        let finalBAC = AlcoholCalculator.bac(session: session, weight: weight)
+        let finalBAC = AlcoholCalculator.bac(session: session, weight: weight, time: .end)
         result.append(.init(bac: finalBAC, date: session.endTime))
         return result
     }

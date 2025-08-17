@@ -5,9 +5,9 @@ import CoreLocation
 
 struct DrinkEvent: Identifiable {
     let id: UUID
-    let time: Date
-    let location: CLLocationCoordinate2D?
-    let drink: Drink
+    var time: Date
+    var location: CLLocationCoordinate2D?
+    var drink: Drink
     
     init(
         id: UUID = UUID(),
@@ -24,16 +24,16 @@ struct DrinkEvent: Identifiable {
 
 struct Drink {
     // Photo ID from the photo library
-    let photoID: String?
+    var photoID: String?
     
     // Name of the drink
-    let name: String?
+    var name: String?
     
     // Size in mils
-    let size: Int
+    var size: Int
     
     // % Strength
-    let abv: Double
+    var abv: Double
     
     init(
         photoID: String? = nil,

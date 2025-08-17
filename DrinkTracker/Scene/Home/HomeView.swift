@@ -15,14 +15,23 @@ struct HomeView {
 extension HomeView: View {
     
     var body: some View {
-        PageScaffold {
+        PageScaffold(list: true) {
             TitleBar(title: "Home")
         } content: {
-            VStack(spacing: 8) {
-                maybeBAC
-                sessions
-            }
+            content
         }
+        .fab(
+            FloatingActionButton(
+                icon: .init(systemName: "plus"),
+                action: viewModel.addDrink
+            )
+        )
+    }
+    
+    @ViewBuilder
+    private var content: some View {
+        maybeBAC
+        sessions
     }
     
     @ViewBuilder
@@ -34,14 +43,12 @@ extension HomeView: View {
     }
     
     private var sessions: some View {
-        VStack {
-            ForEach(viewModel.sessions) { session in
-                Button(action: { viewModel.showSession(session: session)}) {
-                    DrinkingSessionView(session: session)
-                }
+        ForEach(viewModel.sessions) { session in
+            Button(action: { viewModel.showSession(session: session)}) {
+                DrinkingSessionCell(session: session)
             }
         }
-        .padding(.horizontal, 16)
+        .onDelete(perform: viewModel.delete(offsets:))
     }
 }
 
