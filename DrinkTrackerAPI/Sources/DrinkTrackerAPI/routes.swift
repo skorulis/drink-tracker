@@ -6,8 +6,8 @@ func routes(_ app: Application) throws {
         "This is the drink tracker API"
     }
 
-    app.get("hello") { req async -> String in
-        "Hello, world!"
+    app.get("v1/auth") { req async -> String in
+        "Auth will go here"
     }
 
     try app.register(collection: TodoController())
