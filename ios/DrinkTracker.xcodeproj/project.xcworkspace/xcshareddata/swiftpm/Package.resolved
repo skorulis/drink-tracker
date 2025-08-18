@@ -1,5 +1,5 @@
 {
-  "originHash" : "89f0b8424ad255a6338a9313a971c62623f4f96e5c815a9f9dad99e0852c2e42",
+  "originHash" : "62291a38d86b9c1818043219deb19478579017777b30cf766134a5954544ebb5",
   "pins" : [
     {
       "identity" : "askcoordinator",
@@ -16,7 +16,7 @@
       "location" : "https://github.com/skorulis/ASKCore.git",
       "state" : {
         "branch" : "main",
-        "revision" : "f6c161e162bc5d44d2a72a391b764023ebc08e94"
+        "revision" : "fe8f2be1b5105dc851d10b58fc594ca1adfef769"
       }
     },
     {

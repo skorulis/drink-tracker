@@ -15,6 +15,7 @@ struct DrinkTrackerAssembly: AutoInitModuleAssembly {
         registerRenderers(container: container)
         registerViewModels(container: container)
         registerStores(container: container)
+        registerServices(container: container)
     }
     
     private func registerRenderers(container: Knit.Container<DrinkTrackerResolver>) {
@@ -31,6 +32,14 @@ struct DrinkTrackerAssembly: AutoInitModuleAssembly {
         container.register(DrinkingSessionListViewModel.self) { (resolver: DrinkTrackerResolver, session: DrinkingSession) in
             DrinkingSessionListViewModel.make(resolver: resolver, session: session)
         }
+    }
+    
+    private func registerServices(container: Knit.Container<DrinkTrackerResolver>) {
+        container.register(AuthService.self) { AuthService.make(resolver: $0) }
+            .inObjectScope(.container)
+        
+        container.register(DrinkTrackerNetwork.self) { DrinkTrackerNetwork.make(resolver: $0) }
+            .inObjectScope(.container)
     }
     
     private func registerStores(container: Knit.Container<DrinkTrackerResolver>) {

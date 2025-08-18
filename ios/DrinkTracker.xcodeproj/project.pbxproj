@@ -13,6 +13,7 @@
 		FAE992C02E500FAE00BC53A6 /* KnitMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FAE992BF2E500FAE00BC53A6 /* KnitMacros */; };
 		FAE993DD2E50286B00BC53A6 /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = FAE993DC2E50286B00BC53A6 /* Numerics */; };
 		FAE994B02E50912200BC53A6 /* ASKCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = FAE994AF2E50912200BC53A6 /* ASKCoordinator */; };
+		FAE9964B2E53063900BC53A6 /* ASKCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = FAE990AD2E4F5CAB00BC53A6 /* ASKCoordinator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE9964B2E53063900BC53A6 /* ASKCoordinator in Frameworks */,
 				FAE992C02E500FAE00BC53A6 /* KnitMacros in Frameworks */,
 				FAE994B02E50912200BC53A6 /* ASKCoordinator in Frameworks */,
 				FAE991982E4F604E00BC53A6 /* ASKCore in Frameworks */,
@@ -368,6 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DrinkTracker/DrinkTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
@@ -400,6 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DrinkTracker/DrinkTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;

@@ -31,8 +31,16 @@ extension SettingsHomeView: View {
             }
             
             gender
+            
+            auth
         }
         .padding(.horizontal, 16)
+    }
+    
+    private var auth: some View {
+        Button(action: { viewModel.login() }) {
+            Text("Login")
+        }
     }
     
     private var gender: some View {
