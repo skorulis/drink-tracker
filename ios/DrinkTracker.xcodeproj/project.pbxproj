@@ -14,6 +14,7 @@
 		FAE993DD2E50286B00BC53A6 /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = FAE993DC2E50286B00BC53A6 /* Numerics */; };
 		FAE994B02E50912200BC53A6 /* ASKCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = FAE994AF2E50912200BC53A6 /* ASKCoordinator */; };
 		FAE9964B2E53063900BC53A6 /* ASKCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = FAE990AD2E4F5CAB00BC53A6 /* ASKCoordinator */; };
+		FAE996F52E547BB200BC53A6 /* Valet in Frameworks */ = {isa = PBXBuildFile; productRef = FAE996F42E547BB200BC53A6 /* Valet */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 				FAE9964B2E53063900BC53A6 /* ASKCoordinator in Frameworks */,
 				FAE992C02E500FAE00BC53A6 /* KnitMacros in Frameworks */,
 				FAE994B02E50912200BC53A6 /* ASKCoordinator in Frameworks */,
+				FAE996F52E547BB200BC53A6 /* Valet in Frameworks */,
 				FAE991982E4F604E00BC53A6 /* ASKCore in Frameworks */,
 				FAE992BE2E500FAE00BC53A6 /* Knit in Frameworks */,
 			);
@@ -122,6 +124,7 @@
 				FAE992BD2E500FAE00BC53A6 /* Knit */,
 				FAE992BF2E500FAE00BC53A6 /* KnitMacros */,
 				FAE994AF2E50912200BC53A6 /* ASKCoordinator */,
+				FAE996F42E547BB200BC53A6 /* Valet */,
 			);
 			productName = DrinkTracker;
 			productReference = FAE990822E4F5C9100BC53A6 /* DrinkTracker.app */;
@@ -184,6 +187,7 @@
 				FAE992BC2E500FAE00BC53A6 /* XCRemoteSwiftPackageReference "knit" */,
 				FAE993DB2E50286B00BC53A6 /* XCRemoteSwiftPackageReference "swift-numerics" */,
 				FAE994AE2E50912200BC53A6 /* XCRemoteSwiftPackageReference "ASKCoordinator" */,
+				FAE996F32E547BB200BC53A6 /* XCRemoteSwiftPackageReference "Valet" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FAE990832E4F5C9100BC53A6 /* Products */;
@@ -538,6 +542,14 @@
 				kind = branch;
 			};
 		};
+		FAE996F32E547BB200BC53A6 /* XCRemoteSwiftPackageReference "Valet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/square/Valet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -574,6 +586,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FAE994AE2E50912200BC53A6 /* XCRemoteSwiftPackageReference "ASKCoordinator" */;
 			productName = ASKCoordinator;
+		};
+		FAE996F42E547BB200BC53A6 /* Valet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAE996F32E547BB200BC53A6 /* XCRemoteSwiftPackageReference "Valet" */;
+			productName = Valet;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

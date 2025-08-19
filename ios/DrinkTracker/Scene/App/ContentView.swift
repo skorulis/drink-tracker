@@ -9,6 +9,7 @@ struct ContentView: View {
     @Environment(\.drinkTrackerResolver) private var resolver
     
     @State var homeCoordinator = Coordinator(root: RootPath.home)
+    @State var friendsCoordinator = Coordinator(root: FriendsPath.home)
     @State var setttingsCoordinator = Coordinator(root: SettingsPath.home)
     
     var body: some View {
@@ -16,10 +17,18 @@ struct ContentView: View {
             Tab("Home", systemImage: "wineglass") {
                 homeView
             }
+            Tab("Friends", systemImage: "person.crop.circle.fill") {
+                friendsView
+            }
             Tab("Settings", systemImage: "gear.circle") {
                 settingsView
             }
         }
+    }
+    
+    private var friendsView: some View {
+        CoordinatorView(coordinator: friendsCoordinator)
+            .with(renderer: resolver!.friendsPathRenderer())
     }
     
     private var homeView: some View {

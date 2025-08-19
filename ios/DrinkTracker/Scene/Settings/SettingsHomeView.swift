@@ -32,14 +32,23 @@ extension SettingsHomeView: View {
             
             gender
             
-            auth
+            authView
         }
         .padding(.horizontal, 16)
     }
     
-    private var auth: some View {
-        Button(action: { viewModel.login() }) {
-            Text("Login")
+    @ViewBuilder
+    private var authView: some View {
+        if let auth = viewModel.auth {
+            VStack {
+                Button(action: { viewModel.logout() }) {
+                    Text("Logout")
+                }
+            }
+        } else {
+            Button(action: { viewModel.login() }) {
+                Text("Login")
+            }
         }
     }
     
@@ -60,8 +69,8 @@ extension SettingsHomeView: View {
         .pickerStyle(.segmented)
         .font(.largeTitle)
         .accentColor(.white)
-        
     }
+    
 }
 
 // MARK: - Previews

@@ -1,5 +1,5 @@
 {
-  "originHash" : "62291a38d86b9c1818043219deb19478579017777b30cf766134a5954544ebb5",
+  "originHash" : "4ea9d3d31419948ba217e603bcd50fb703a30ab81c615681fca5947be7eab446",
   "pins" : [
     {
       "identity" : "askcoordinator",
@@ -53,6 +53,15 @@
       "state" : {
         "revision" : "f99ae8aa18f0cf0d53481901f88a0991dc3bd4a2",
         "version" : "601.0.1"
+      }
+    },
+    {
+      "identity" : "valet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/square/Valet",
+      "state" : {
+        "revision" : "05c9e514fbd352a6866877ca31326b4e0b7d6d01",
+        "version" : "5.0.0"
       }
     }
   ],

@@ -18,4 +18,13 @@ final class DrinkTrackerNetwork {
     func execute<R: HTTPRequest>(request: R) async throws -> R.ResponseType {
         return try await http.execute(request: request)
     }
+    
+}
+
+extension DrinkTrackerNetwork {
+    func getFriends() async throws -> [Friend] {
+        // let request = HTTPJSONRequest(endpoint: "friends")
+        return []
+    }
+
 }

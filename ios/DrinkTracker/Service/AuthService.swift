@@ -7,12 +7,12 @@ import KnitMacros
 final class AuthService: NSObject, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     
     private let network: DrinkTrackerNetwork
-    private let mainStore: MainStore
+    private let authStore: AuthStore
     
     @Resolvable<DrinkTrackerResolver>
-    init(network: DrinkTrackerNetwork, mainStore: MainStore) {
+    init(network: DrinkTrackerNetwork, authStore: AuthStore) {
         self.network = network
-        self.mainStore = mainStore
+        self.authStore = authStore
     }
     
     func startSignInWithAppleFlow() {
@@ -39,13 +39,19 @@ final class AuthService: NSObject, ASAuthorizationControllerDelegate, ASAuthoriz
             body: AuthRequestBody(identityToken: tokenString)
         )
         
-        Task {
-            let res = try await network.execute(request: req)
-            mainStore.userSettings.auth = UserSettings.Auth(
-                id: res.user.id,
-                email: res.user.email,
-                expiry: res.providerPayload.exp
-            )
+        Task { @MainActor in
+            do {
+                let res = try await network.execute(request: req)
+                let auth = AuthRecord(
+                    token: res.token,
+                    expiry: res.expiry,
+                    user: res.user
+                )
+                authStore.set(auth: auth)
+            } catch {
+                print("Network error: \(error)")
+            }
+            
         }
     }
     
@@ -58,18 +64,8 @@ struct AuthRequestBody: Codable {
     let identityToken: String
 }
 
-struct AuthResponse: Codable {
-    struct User: Codable {
-        let id: String
-        let email: String
-    }
-    
-    struct Provider: Codable {
-        let exp: Int64
-    }
-    
+struct AuthResponse: Codable {    
     let token: String
+    let expiry: Int64
     let user: User
-    let providerPayload: Provider
-    
 }

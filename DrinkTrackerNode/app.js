@@ -96,7 +96,11 @@ app.post("/auth/apple", async (req, res) => {
       { expiresIn: "7d" }
     );
 
-    return res.json({ token: sessionToken, user });
+    return res.json({
+      token: sessionToken,
+      user,
+      expiry: applePayload.exp
+    });
   } catch (error) {
     return res.status(401).json({ error: "Invalid Apple identity token" });
   }

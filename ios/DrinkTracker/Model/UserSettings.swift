@@ -5,22 +5,19 @@ import Foundation
 struct UserSettings {
     var weight: Int?
     var gender: Gender
-    var auth: Auth?
     
     var calcWeight: Double { Double(weight ?? 75) }
+}
+
+struct User: Codable {
+    let id: String
+    let email: String
+    let created_at: String
 }
 
 enum Gender: String, CaseIterable, Identifiable {
     case male, female, unspecified
     
     var id: Self { self }
-}
-
-extension UserSettings {
-    struct Auth: Codable {
-        let id: String
-        let email: String
-        let expiry: Int64
-    }
 }
 
