@@ -1,15 +1,36 @@
-# README
+## DrinkTracker API
 
-This is the [Express](https://expressjs.com) [Hello world](https://expressjs.com/en/starter/hello-world.html) example on [Render](https://render.com).
+Node/Express API with Apple Sign In and Postgres.
 
-The app in this repo is deployed at [https://express.onrender.com](https://express.onrender.com).
+### Setup
 
-## Deployment
+1) Install deps
+```
+yarn
+```
 
-See https://render.com/docs/deploy-node-express-app or follow the steps below:
+2) Configure environment (copy and edit)
+```
+touch .env
+```
 
-Create a new web service with the following values:
-  * Build Command: `yarn`
-  * Start Command: `node app.js`
+Set:
+- `APPLE_AUDIENCE` = your iOS bundle id
+- `JWT_SECRET` = long random string
+- `DATABASE_URL`
 
-That's it! Your web service will be live on your Render URL as soon as the build finishes.
+3) Local Postgres (optional)
+```
+docker compose up -d db
+```
+
+4) Start API
+```
+yarn start
+```
+
+### API
+
+- `POST /auth/apple` body `{ identityToken }` → `{ token, user }`
+- `GET /me` `Authorization: Bearer <token>` → `{ user }`
+

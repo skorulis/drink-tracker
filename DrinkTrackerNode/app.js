@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const jwksClient = require("jwks-rsa");
+const { init: initDb, upsertUserApple, getUserById } = require("./db");
 const app = express();
 const port = process.env.PORT || 3001;
 
@@ -75,6 +76,9 @@ app.post("/auth/apple", async (req, res) => {
     const userId = applePayload.sub;
     const email = applePayload.email;
 
+    // Upsert user in DB
+    const user = await upsertUserApple(userId, email);
+
     // Issue app session token
     const sessionToken = jwt.sign(
       { userId, email, provider: "apple" },
@@ -82,22 +86,27 @@ app.post("/auth/apple", async (req, res) => {
       { expiresIn: "7d" }
     );
 
-    return res.json({
-      token: sessionToken,
-      user: { id: userId, email },
-      providerPayload: { iss: applePayload.iss, aud: applePayload.aud, iat: applePayload.iat, exp: applePayload.exp },
-    });
+    return res.json({ token: sessionToken, user });
   } catch (error) {
     return res.status(401).json({ error: "Invalid Apple identity token" });
   }
 });
 
 // Example protected route
-app.get("/me", authenticateSession, (req, res) => {
-  return res.json({ user: { id: req.auth.userId, email: req.auth.email }, auth: req.auth });
+app.get("/me", authenticateSession, async (req, res) => {
+  const user = await getUserById(req.auth.userId);
+  return res.json({ user, auth: req.auth });
 });
 
-const server = app.listen(port, () => console.log(`DrinkTracker API listening on port ${port}!`));
+// Initialize DB then start server
+initDb()
+  .then(() => {
+    const server = app.listen(port, () => console.log(`DrinkTracker API listening on port ${port}!`));
+    server.keepAliveTimeout = 120 * 1000;
+    server.headersTimeout = 120 * 1000;
+  })
+  .catch((error) => {
+    console.error("Failed to initialize database:", error);
+    process.exit(1);
+  });
 
-server.keepAliveTimeout = 120 * 1000;
-server.headersTimeout = 120 * 1000;
