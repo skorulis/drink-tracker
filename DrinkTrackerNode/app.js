@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const jwksClient = require("jwks-rsa");
-const { init: initDb, upsertUserApple, getUserById } = require("./db");
+const { init: initDb, upsertUserApple, getUserById, pool } = require("./db");
 const app = express();
 const port = process.env.PORT || 3001;
 
@@ -64,6 +64,16 @@ app.get("/", (req, res) => {
     timestamp: new Date().toISOString(),
     status: "success"
   });
+});
+
+// DB health check endpoint
+app.get("/health/db", async (req, res) => {
+  try {
+    const result = await pool.query("select 1 as ok");
+    return res.json({ ok: true, db: "connected", result: result.rows[0].ok });
+  } catch (error) {
+    return res.status(500).json({ ok: false, db: "unavailable" });
+  }
 });
 
 // Exchange Apple identity token for an app session token
